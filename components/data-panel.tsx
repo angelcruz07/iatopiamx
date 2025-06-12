@@ -1,8 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { BarChart, LineChart } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { BarChart, LineChart } from "lucide-react";
 
 interface DataPanelProps {
-  type: "demograficos" | "economia" | "cultura"
+  type: "demograficos" | "economia" | "cultura";
 }
 
 export default function DataPanel({ type }: DataPanelProps) {
@@ -37,7 +37,7 @@ export default function DataPanel({ type }: DataPanelProps) {
               </div>
             </div>
           </div>
-        )
+        );
       case "economia":
         return (
           <div className="space-y-4">
@@ -63,7 +63,7 @@ export default function DataPanel({ type }: DataPanelProps) {
               </div>
             </div>
           </div>
-        )
+        );
       case "cultura":
         return (
           <div className="space-y-4">
@@ -72,11 +72,15 @@ export default function DataPanel({ type }: DataPanelProps) {
               <ul className="mt-2 space-y-2">
                 <li className="flex items-center justify-between">
                   <span>Teotihuacán</span>
-                  <span className="text-sm text-zinc-400">Sitio arqueológico</span>
+                  <span className="text-sm text-zinc-400">
+                    Sitio arqueológico
+                  </span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span>Toluca</span>
-                  <span className="text-sm text-zinc-400">Capital cultural</span>
+                  <span className="text-sm text-zinc-400">
+                    Capital cultural
+                  </span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span>Valle de Bravo</span>
@@ -85,15 +89,15 @@ export default function DataPanel({ type }: DataPanelProps) {
               </ul>
             </div>
           </div>
-        )
+        );
       default:
-        return null
+        return null;
     }
-  }
+  };
 
   return (
     <Card className="bg-zinc-950 border-zinc-800 text-white">
       <CardContent className="pt-6">{renderContent()}</CardContent>
     </Card>
-  )
+  );
 }
