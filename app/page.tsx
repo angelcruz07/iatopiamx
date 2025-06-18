@@ -10,6 +10,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart3, Info, Layers, Map } from "lucide-react";
 import { SceneModels } from "@/components/SceneModels";
+import { AIChat } from "@/components/IaChat";
 
 export default function Home() {
   return (
@@ -91,6 +92,7 @@ export default function Home() {
           </Tabs>
         </div>
       </main>
+      <AIChat />
     </div>
   );
 }
