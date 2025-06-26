@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { useChat } from "@ai-sdk/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useChat } from "@ai-sdk/react";
+import { AlertTriangle, Bot, Loader2, Send, User } from "lucide-react";
+import { useState } from "react";
+import { Alert, AlertDescription } from "./ui/alert";
 import { Input } from "./ui/input";
 import { ScrollArea } from "./ui/scroll-area";
-import { Alert, AlertDescription } from "./ui/alert";
-import { Send, Bot, User, Loader2, AlertTriangle } from "lucide-react";
 
 export function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ export function AIChat() {
           id: "welcome",
           role: "assistant",
           content:
-            "¡Hola! Soy tu asistente de IA especializado en el Estado de México. Puedo ayudarte con información sobre demografía, geografía, economía y sitios de interés. ¿Qué te gustaría saber?",
+            "¡Hola! Soy tu asistente de IA especializado en el Estado de 3D. Puedo ayudarte con información sobre demografía, geografía, economía y sitios de interés. ¿Qué te gustaría saber?",
         },
       ],
       onError: (error) => {
@@ -32,12 +32,20 @@ export function AIChat() {
       },
     });
 
+  // Previene enviar mensajes vacíos
+  function handleSend(e: React.FormEvent) {
+    e.preventDefault();
+    if (!input.trim()) return;
+    handleSubmit(e);
+  }
+
   if (!isOpen) {
     return (
       <Button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-emerald-600 hover:bg-emerald-700 shadow-lg z-50"
         size="icon"
+        aria-label="Abrir chat asistente IA"
       >
         <Bot className="h-6 w-6" />
       </Button>
@@ -56,6 +64,7 @@ export function AIChat() {
           size="sm"
           onClick={() => setIsOpen(false)}
           className="text-zinc-400 hover:text-white"
+          aria-label="Cerrar chat asistente IA"
         >
           ✕
         </Button>
@@ -77,7 +86,9 @@ export function AIChat() {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex items-start gap-3 ${message.role === "user" ? "justify-end" : "justify-start"}`}
+                className={`flex items-start gap-3 ${
+                  message.role === "user" ? "justify-end" : "justify-start"
+                }`}
               >
                 {message.role === "assistant" && (
                   <div className="flex-shrink-0 w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
@@ -117,19 +128,21 @@ export function AIChat() {
           </div>
         </ScrollArea>
 
-        <form onSubmit={handleSubmit} className="flex gap-2 mt-4">
+        <form onSubmit={handleSend} className="flex gap-2 mt-4">
           <Input
             value={input}
             onChange={handleInputChange}
             placeholder="Pregunta sobre el Estado de México..."
             className="flex-1 bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-400"
             disabled={isLoading || !!error || !!apiError}
+            aria-label="Campo de texto para pregunta"
           />
           <Button
             type="submit"
             size="icon"
             disabled={isLoading || !input.trim() || !!error || !!apiError}
             className="bg-emerald-600 hover:bg-emerald-700"
+            aria-label="Enviar pregunta"
           >
             <Send className="h-4 w-4" />
           </Button>

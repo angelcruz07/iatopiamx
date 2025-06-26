@@ -35,3 +35,4 @@ useGLTF.preload("/models/maya.glb");
 useGLTF.preload("/models/taco.glb");
 useGLTF.preload("/models/bajacalifornia.glb");
 useGLTF.preload("/models/cdmx.glb");
+useGLTF.preload("/models/yucatan.glb");

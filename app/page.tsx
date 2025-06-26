@@ -17,7 +17,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-zinc-900">
       <header className="border-b border-zinc-800 bg-zinc-950 py-4">
         <div className="container flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-white">Mapa de méxico 3D</h1>
+          <h1 className="text-2xl font-bold text-white">IAtopia MX</h1>
 
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mapa mexico 3D",
+  title: "IAtopiamx",
   description: "Proyecto escolar de la materia de Matemáticas Discretas",
   icons: "/mexico.jpg",
 };

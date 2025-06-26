@@ -1,6 +1,16 @@
 export const modelPaths = [
+  { name: "Ciudad de México", url: "/models/cdmx.glb" },
+  { name: "Hachito", url: "/models/capi.glb" },
   { name: "Estado", url: "/models/mexico.glb" },
-  { name: "Piedra del sol", url: "/models/maya.glb" },
-  { name: "Taco", url: "/models/taco.glb" },
+  { name: "Chiapas", url: "/models/chiapas.glb" },
+  { name: "Chihuahua", url: "/models/chihuahua.glb" },
+  { name: "Campeche", url: "/models/campeche.glb" },
+  { name: "Baja California Sur", url: "/models/baja_california_sur.glb" },
+  { name: "Colima", url: "/models/colima.glb" },
+  // { name: "Taco", url: "/models/taco.glb" },
   { name: "Baja California", url: "/models/bajacalifornia.glb" },
+  { name: "Yucatan", url: "/models/yucatan.glb" },
+  { name: "Zacatecas", url: "/models/zacatecas.glb" },
+  { name: "Tlaxcala", url: "/models/tlaxcala.glb" },
+  { name: "Veracruz", url: "/models/veracruz.glb" },
 ];
