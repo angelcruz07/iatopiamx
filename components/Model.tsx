@@ -30,5 +30,23 @@ export const Model = ({ modelUrl }: Props) => {
   );
 };
 
+useGLTF.preload("/models/mapamexico.glb");
 useGLTF.preload("/models/mexico.glb");
 useGLTF.preload("/models/cdmx.glb");
+useGLTF.preload("/models/chiapas.glb");
+useGLTF.preload("/models/chihuahua.glb");
+useGLTF.preload("/models/campeche.glb");
+useGLTF.preload("/models/colima.glb");
+useGLTF.preload("/models/tlaxcala.glb");
+useGLTF.preload("/models/veracruz.glb");
+useGLTF.preload("/models/baja_california_sur.glb");
+useGLTF.preload("/models/morelos.glb");
+useGLTF.preload("/models/hidalgo.glb");
+useGLTF.preload("/models/coahuila.glb");
+useGLTF.preload("/models/durango.glb");
+useGLTF.preload("/models/guerrero.glb");
+useGLTF.preload("/models/baja_california.glb");
+useGLTF.preload("/models/zacatecas.glb");
+useGLTF.preload("/models/tamaulipas.glb");
+useGLTF.preload("/models/tabasco.glb");
+useGLTF.preload("/models/yucatan.glb");
