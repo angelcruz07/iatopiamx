@@ -21,9 +21,9 @@ export const Model = ({ modelUrl }: Props) => {
   return (
     <Suspense fallback={null}>
       <ambientLight intensity={1} />
-      <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+      <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
       <group ref={groupRef} key={modelUrl}>
-        <primitive object={clonedScene} scale={0.5} />
+        <primitive object={clonedScene} scale={0.8} />
       </group>
       <OrbitControls enablePan={false} enableZoom enableRotate />
     </Suspense>
@@ -31,8 +31,4 @@ export const Model = ({ modelUrl }: Props) => {
 };
 
 useGLTF.preload("/models/mexico.glb");
-useGLTF.preload("/models/maya.glb");
-useGLTF.preload("/models/taco.glb");
-useGLTF.preload("/models/bajacalifornia.glb");
 useGLTF.preload("/models/cdmx.glb");
-useGLTF.preload("/models/yucatan.glb");

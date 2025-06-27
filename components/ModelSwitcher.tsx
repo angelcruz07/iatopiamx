@@ -8,7 +8,7 @@ interface Props {
 
 export const ModelSwitcher = ({ currentName, onPrev, onNext }: Props) => {
   return (
-    <div className="flex items-center gap-4 px-4 py-2 rounded text-white shadow-lg">
+    <div className="flex items-center  justify-center gap-4 px-4 py-2 rounded">
       <ArrowLeftIcon className="h-5 w-5 cursor-pointer" onClick={onPrev} />
 
       <span className="text-sm">{currentName}</span>
